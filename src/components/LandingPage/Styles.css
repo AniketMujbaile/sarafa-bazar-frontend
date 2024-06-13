@@ -1,0 +1,35 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@keyframes animate-slide-infinite {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-slide-infinite {
+  animation: animate-slide-infinite 15s linear infinite;
+}
+
+@media (max-width: 767px) {
+  .animate-slide-infinite {
+    animation: slide-infinite-mobile 15s linear infinite;
+  }
+
+  @keyframes slide-infinite-mobile {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+}
+
+.curved-top {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 5vw), 0 100%);
+}
